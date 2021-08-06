@@ -10,12 +10,12 @@ from tkinter import *
 def system():
     root=Tk()
     root.geometry("1700x900")
-    root.title("Restuarant Management System")
+    root.title("Restaurant Management System")
     ############database###########
     def Database():
          global conn,cursor
         #creating system database
-         conn=sqlite3.connect("Restuarant.db")
+         conn=sqlite3.connect("Restaurant.db")
          cursor=conn.cursor()
         #creating bill table
          cursor.execute("CREATE TABLE IF NOT EXISTS RECORD(ordno text, fr text ,piz text,bur text,noo text,ice text, dr text, ct text,sb text,tax text,sr text,tot text)")
