@@ -224,7 +224,7 @@ def system():
     #Time
     localtime=time.asctime(time.localtime(time.time()))
     #Top part
-    infolb=Label(topframe,font=('vardana',30,'bold'),text="Restuarant Management System",fg="#e67f30",bd=10,anchor=W)
+    infolb=Label(topframe,font=('vardana',30,'bold'),text="Restaurant Management System",fg="#e67f30",bd=10,anchor=W)
     infolb.grid(row=0,column=0)
     infolb=Label(topframe,font=('varadana',20,),text=localtime,fg="black",anchor=W)
     infolb.grid(row=1,column=0)
@@ -285,7 +285,7 @@ def system():
         feed.geometry("600x500")
         feed.title("Feedback form")
         ### database ###
-        conn=sqlite3.connect("Restuarant.db")
+        conn=sqlite3.connect("Restaurant.db")
         cursor=conn.cursor()
         cursor.execute("CREATE TABLE IF NOT EXISTS FEEDBACK(n text,eid text,feedback5 text,com text)")
         ### variable datatype asssignment ###
@@ -310,7 +310,7 @@ def system():
             if(checkvar4.get()=="1"):
                 feedback2="Poor"
             feedback5=feedback1+" "+feedback2+" "+feedback3+" "+feedback4
-            conn=sqlite3.connect("Restuarant.db")
+            conn=sqlite3.connect("Restaurant.db")
             cursor=conn.cursor()
             cursor.execute("INSERT INTO FEEDBACK VALUES ('"+n+"','"+eid+"','"+com+"','"+feedback5+"')")
             messagebox.showinfo("message","data inserted !")
